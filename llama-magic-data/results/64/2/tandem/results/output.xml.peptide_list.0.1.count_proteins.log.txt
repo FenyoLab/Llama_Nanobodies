@@ -1,0 +1,10 @@
+filename=/Users/sarahkeegan/fenyolab/code/NCDIR/Llama/results/64/2/tandem/results/output.xml.peptide_list.0.1.txt
+db_filename=/Users/sarahkeegan/fenyolab/code/NCDIR/Llama/results/5000/protein/longest_nr.fasta
+tandem_output_filename=/Users/sarahkeegan/fenyolab/code/NCDIR/Llama/results/64/2/tandem/results/output.xml
+use_tail=0
+use_primers=1
+Reading in peptide data...
+/Users/sarahkeegan/fenyolab/code/NCDIR/Llama/results/64/2/tandem/results/output.xml.peptide_list.0.1.txt
+4996 peptides
+Reading in protein database data...
+/Users/sarahkeegan/fenyolab/code/NCDIR/Llama/results/5000/protein/longest_nr.fasta

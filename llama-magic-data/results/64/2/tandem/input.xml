@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<bioml>
+	<note type="input" label="spectrum, fragment monoisotopic mass error">0.4</note>
+	<note type="input" label="spectrum, parent monoisotopic mass error plus">10</note>
+	<note type="input" label="spectrum, parent monoisotopic mass error minus">10</note>
+	<note type="input" label="spectrum, fragment monoisotopic mass error units">Daltons</note>
+	<note type="input" label="spectrum, parent monoisotopic mass error units">ppm</note>
+
+	<note type="input" label="list path, default parameters">../default_input.xml</note>
+	<note type="input" label="list path, taxonomy information">C:\Code\NCDIR\Llama/results/64/taxonomy.xml</note>
+
+	<note type="input" label="protein, taxon">llama</note>
+	<note type="input" label="spectrum, path">C:\Code\NCDIR\Llama/results/64/2/mgf/ms_1.mgf</note>	<note type="input" label="output, path">C:\Code\NCDIR\Llama/results/64/2/tandem/results/output.xml</note>
+	<note type="input" label="output, results">valid</note>
+</bioml>
