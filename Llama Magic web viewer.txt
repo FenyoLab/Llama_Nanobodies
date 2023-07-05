@@ -1,0 +1,11 @@
+0) Install Docker
+1) Copy LM web viewer source code (from GitHub) to a new directory on the local machine
+2) Open a terminal and cd to the new directory
+3) Build the container:
+
+docker build -t llama-magic .
+
+4) Create a directory on the local computer to hold the LM data files
+5) Run the container (replace "/Users/sarahkeegan/code/fenyolab/Llama_Nanobodies/llama-magic-data/results" with the directory from step 4):
+
+docker run -dp 127.0.0.1:3000:3000 --mount type=bind,src="/Users/sarahkeegan/code/fenyolab/Llama_Nanobodies/llama-magic-data/results",target=/var/www/llama-magic/results llama-magic
