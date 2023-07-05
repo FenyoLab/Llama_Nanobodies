@@ -1,5 +1,4 @@
-64	5094 - 20160224 - v2 - with 8 tails
-65	TEST
+64	Sample DB 5094
 
 
 

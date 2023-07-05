@@ -13,7 +13,7 @@ my $SETTINGS_FILE = "../settings.txt";
 my $img_source_plus = '/llama-magic-html/plus.gif';
 my $img_source_minus = '/llama-magic-html/minus.gif';
 my $img_source_star = '/llama-magic-html/greyplus.gif';
-my $img_source_new = '/llama-magic-html/add_item.png';
+#my $img_source_new = '/llama-magic-html/add_item.png';
 my $DEVELOPER_VERSION = 1;
 #my $DEVELOPER_VERSION = 0;
 my $DEVELOPER_LOGFILE = "cgi_dev_log.txt";
@@ -209,7 +209,7 @@ sub read_settings
 sub top_header
 {
     print header(),
-	  start_html(-title => 'Llama Magic',
+	  start_html(-title => 'Llama Magic Viewer',
 		     -style => [{ -src=>'../llama-magic-html/smoothness/jquery-ui-1.10.3.custom.min.css' }, #download and fix this
 				{ -src=>'../llama-magic-html/main.css' }], 
 		     -script => [{ -type=>'javascript', -src=>'../llama-magic-html/jquery-1.9.1.min.js' },
@@ -219,7 +219,7 @@ sub top_header
 	  
 
 	  print "<table class='maintable'><tr class='banner' ><td colspan='1'>",
-	  qq!<h1><img id="llama" src="/llama-magic-html/llama.jpg"> Welcome to Llama Magic </h1> </td></tr>!;
+	  qq!<h1><img id="llama" src="/llama-magic-html/llama.jpg">Llama Magic Viewer</h1> </td></tr>!;
 }
 
 sub check_status_file
