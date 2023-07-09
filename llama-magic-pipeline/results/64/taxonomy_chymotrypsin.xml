@@ -1,0 +1,7 @@
+<?xml version="1.0"?><bioml label="x! taxon-to-file matching list">
+
+<taxon label="llama">
+	<file format="peptide" URL="../llama-magic-pipeline/results/64/protein/longest_nr_predigested_chymotrypsin.fasta" />
+</taxon>
+
+</bioml>

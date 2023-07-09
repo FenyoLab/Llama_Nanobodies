@@ -1,0 +1,24 @@
+/gpfs/data/proteomics/projects/NCDIR/Llama/pipeline/results/105/1101
+/gpfs/data/proteomics/projects/NCDIR/Llama/pipeline/results/105
+10
+20
+ppm
+ppm
+-
+-
+-
+-
+chymotrypsin
+-
+/results/105/1101
+1
+1
+0
+0
+1
+WIV1_Band0_Chymo.mgf
+-
+Calling: "tandem.exe" "/gpfs/data/proteomics/projects/NCDIR/Llama/pipeline/results/105/1101/tandem/input1.xml"
+Calling: "perl" "parse_xtandem_llama.pl" "/gpfs/data/proteomics/projects/NCDIR/Llama/pipeline/results/105/1101/tandem/results" "0.1"
+Calling: "perl" "map_peptides_to_proteins.pl" "/gpfs/data/proteomics/projects/NCDIR/Llama/pipeline/results/105/1101/tandem/results/output1.xml.peptide_list.0.1.txt" "" "/gpfs/data/proteomics/projects/NCDIR/Llama/pipeline/results/105/protein/longest_nr.fasta" "/results/105/1101/tandem/results/output1.xml" "" "/gpfs/data/proteomics/projects/NCDIR/Llama/pipeline/results/105/protein/protein_peptides_chymotrypsin.fasta" "" "1" "1" "0" "1"
+DONE

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+    <bioml>
+        <note type="input" label="spectrum, fragment monoisotopic mass error">20</note>
+        <note type="input" label="spectrum, parent monoisotopic mass error plus">10</note>
+        <note type="input" label="spectrum, parent monoisotopic mass error minus">10</note>
+        <note type="input" label="spectrum, fragment monoisotopic mass error units">ppm</note>
+        <note type="input" label="spectrum, parent monoisotopic mass error units">ppm</note>
+        <note type="input" label="list path, default parameters">../llama-magic-pipeline/results/default_input.xml</note>
+
+	<note type="input" label="list path, taxonomy information">../llama-magic-pipeline/results/64/taxonomy_chymotrypsin.xml</note>
+	<note type="input" label="protein, taxon">llama</note>
+	<note type="input" label="spectrum, path">../llama-magic-pipeline/results/64/2/mgf/ms1.mgf</note>
+        <note type="input" label="output, path">../llama-magic-pipeline/results/64/2/tandem/results/output1.xml</note>
+        <note type="input" label="output, results">valid</note>
+    </bioml>
