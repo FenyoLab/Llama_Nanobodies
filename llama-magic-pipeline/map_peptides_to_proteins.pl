@@ -70,22 +70,22 @@ my $filter_cdr3 = 0;
 my $filter_cdr3_filename = "output.xml.peptide_list.0.1.cdr3_cov75.fasta";
 
 if ($ARGV[0]=~/\w/) { $filename="$ARGV[0]"; } 
-else { $filename="/Users/sarahkeegan/Dropbox/mac_files/fenyolab/data_and_results/Llama/test/output1.xml.peptide_list.0.1.txt"; }
+else { $filename="/Users/snk218/Dropbox (NYU Langone Health)/mac_files/fenyolab/data_and_results/Llama/new_test/output1.xml.peptide_list.0.1.txt"; }
 
 if ($ARGV[1]=~/\w/) { $filename2="$ARGV[1]"; } #this is for the second XTandem result file (When combining results as in trypsin+chymotrypsin)
 else { $filename2=""; }
 
 if ($ARGV[2]=~/\w/) { $db_filename="$ARGV[2]"; }
-else { $db_filename="/Users/sarahkeegan/Dropbox/mac_files/fenyolab/data_and_results/Llama/test/longest_nr.fasta"; }
+else { $db_filename="/Users/snk218/Dropbox (NYU Langone Health)/mac_files/fenyolab/data_and_results/Llama/new_test/longest_nr.fasta"; }
 
 if ($ARGV[3]=~/\w/) { $tandem_output_filename="$ARGV[3]"; }
-else { $tandem_output_filename="/Users/sarahkeegan/Dropbox/mac_files/fenyolab/data_and_results/Llama/test/output.xml"; }
+else { $tandem_output_filename="/Users/snk218/Dropbox (NYU Langone Health)/mac_files/fenyolab/data_and_results/Llama/new_test/output1.xml"; }
 
 if ($ARGV[4]=~/\w/) { $tandem_output_filename2="$ARGV[4]"; }
 else { $tandem_output_filename2=""; }
 
 if ($ARGV[5]=~/\w/) { $peptide_index_filename="$ARGV[5]"; } #if file exists, index will be used else index won't be used
-else{ $peptide_index_filename = "/Users/sarahkeegan/Dropbox/mac_files/fenyolab/data_and_results/Llama/test/protein_peptides.fasta"; }
+else{ $peptide_index_filename = "/Users/snk218/Dropbox (NYU Langone Health)/mac_files/fenyolab/data_and_results/Llama/new_test/protein_peptides.fasta"; }
 
 if ($ARGV[6]=~/\w/) { $peptide_index_filename2="$ARGV[6]"; } #if file exists, index will be used else index won't be used
 else{ $peptide_index_filename2 = ""; }
@@ -94,13 +94,13 @@ if ($ARGV[7]=~/\w/) { $show_score=$ARGV[7]; }
 else { $show_score = 1; }
 
 if ($ARGV[8]=~/\w/) { $use_primers=$ARGV[8]; }
-else { $use_primers = 0; } 
+else { $use_primers = 1; }
 
 if ($ARGV[9]=~/\w/) { $use_tail=$ARGV[9]; }
 else { $use_tail = 0; } 
 
 if($ARGV[10]=~/\w/) { $new_primers=$ARGV[10]; }
-else { $new_primers=0; } 
+else { $new_primers=1; }
 
 #primer params
 my $P1_SEQ_LENGTH;
@@ -175,7 +175,7 @@ if ($filename2)
 
 #filter input peptides by expectation score
 #filter: -log(e) * peptides_count >= 1.2 (peptides_count = # times peptide found in the file, log(e) = lowest expect value for peptide)
-foreach (keys %peptides)
+foreach (keys %peptides)  # will pass filter if: -log(e) > 1.2 OR found > 1x in file
 {
 	if(abs($peptides{$_}[0] * $peptides{$_}[3]) < $PEPTIDE_FILTER_MIN)
 	{#remove peptide from list
@@ -1258,21 +1258,15 @@ sub find_cdr3_new
 		$default_right_area = 6;
 		if($new_primers)
 		{
+				# these 2 are from start of string
 				$left_area_start+=9; $left_area_end+=9;
-		
-				#determine SH or LH
-#				my $primer2_str = substr($seq, -1*$P2_LH_SEQ_LENGTH);
-#				my $count_LH = ( $primer2_str ^ "PKTPKPQP" ) =~ tr/\0//c; #gives number of mismatches
-#				$primer2_str = substr($seq, -1*$P2_SH_SEQ_LENGTH);
-#				my $count_SH = ( $primer2_str ^ "HHSEDP" ) =~ tr/\0//c;
-#				my $subtract_amt;
-#				if($count_LH < $count_SH) { $subtract_amt=10; }
-#				else { $subtract_amt=8; }
 
-				my $subtract_amt = 10;
-			
-				$right_area_start-=$subtract_amt; $right_area_end-=$subtract_amt;
-				$default_left_area-=$subtract_amt; my $default_right_area-=$subtract_amt;
+				# these are from end of string
+				my $add_amt = 10;
+				$right_area_start+=$add_amt;
+				$right_area_end+=$add_amt;
+				$default_left_area+=$add_amt;
+				$default_right_area+=$add_amt;
 		}
 	}
 	else
